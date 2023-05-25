@@ -1,3 +1,3 @@
 # MarketMonitor
 
-![This is the wire-frame for the current project.] (./assets/images/Homepage-wireframe.jpg)
+![Wireframe](./assets/images/Homepage-wireframe.jpg)
