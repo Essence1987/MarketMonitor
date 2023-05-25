@@ -1,4 +1,4 @@
-var key = config.marketaux;
+var marketkey = JuJOIG1hHbpKquZiBFJtJ4OCTTKIavGBRQyzQ4bN;
 
 const authToken = '3491e214e88f50ea6f1b431ad848d7391a9ef924';
 const apiUrl = 'https://cryptopanic.com/api/v1/posts/';
