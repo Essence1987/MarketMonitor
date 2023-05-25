@@ -1,3 +1,6 @@
+
+var marketkey = JuJOIG1hHbpKquZiBFJtJ4OCTTKIavGBRQyzQ4bN;
+
 const searchButtonEl = document.querySelector("#search_button");
 const recentNewsFeedEl = document.querySelector("#main_recent-news");
 const current_graph = document.querySelector("#current_graph");
