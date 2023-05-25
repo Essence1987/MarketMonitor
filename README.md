@@ -1,3 +1,3 @@
 # MarketMonitor
 
-(./assets/images/Homepage-wireframe.jpg)
+![Wireframe](./assets/images/Homepage-wireframe.jpg)
