@@ -1,24 +1,13 @@
+
 var marketkey = JuJOIG1hHbpKquZiBFJtJ4OCTTKIavGBRQyzQ4bN;
 
-const authToken = '3491e214e88f50ea6f1b431ad848d7391a9ef924';
-const apiUrl = 'https://cryptopanic.com/api/v1/posts/';
+const searchButtonEl = document.querySelector("#search_button");
+const recentNewsFeedEl = document.querySelector("#main_recent-news");
+const current_graph = document.querySelector("#current_graph");
+const searchNewsEl = document.querySelector("#search_news");
 
-// Function to fetch API data
-async function fetchData() {
-  try {
-    const response = await fetch(`${apiUrl}?auth_token=${authToken}&public=true`);
-
-    if (!response.ok) {
-      throw new Error('Request failed');
-    }
-
-    const data = await response.json();
-    // Process the data as needed
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Call the fetchData function after the page has fully loaded
-document.addEventListener('DOMContentLoaded', fetchData);
+searchButtonEl.addEventListener("click", function () {
+  recentNewsFeedEl.classList.add("hidden"),
+    current_graph.classList.add("hidden"),
+    searchNewsEl.classList.remove("hidden");
+});
