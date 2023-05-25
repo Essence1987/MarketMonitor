@@ -1,4 +1,5 @@
 
+
 //GET https://api.marketaux.com/v1/news/all HTTP/1.1
 
 var requestOptions = {
@@ -20,3 +21,14 @@ fetch("https://api.marketaux.com/v1/news/all?" + query, requestOptions)
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.log('error', error));
+
+const searchButtonEl = document.querySelector("#search_button");
+const recentNewsFeedEl = document.querySelector("#main_recent-news");
+const current_graph = document.querySelector("#current_graph");
+const searchNewsEl = document.querySelector("#search_news");
+
+searchButtonEl.addEventListener("click", function () {
+  recentNewsFeedEl.classList.add("hidden"),
+    current_graph.classList.add("hidden"),
+    searchNewsEl.classList.remove("hidden");
+});
