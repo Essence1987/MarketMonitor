@@ -47,7 +47,12 @@ function fetchStockNewsApi() {
 				document.querySelector('.card-text' + (i + 1)).innerHTML =
 					articleDescription;
 				document.querySelector('.card-img-top' + (i + 1)).src = articleImg;
-				document.querySelector('.card-read-more' + (i + 1)).href = articleUrl;
+				document
+					.querySelector('.card-read-more' + (i + 1))
+					.getAttribute('href');
+				document
+					.querySelector('.card-read-more' + (i + 1))
+					.setAttribute('href', articleUrl);
 			}
 		});
 }
