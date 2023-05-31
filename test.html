@@ -3,9 +3,10 @@
 <head>
   <title>Fetch Data Example</title>
   <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="assets/test.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="assets/test.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> <!-- Include Plotly library -->
   <style>
     /* CSS styles for input and button */
     .input-container {
@@ -24,12 +25,36 @@
       border-radius: 4px;
       cursor: pointer;
     }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
   <div class="input-container">
     <input type="text" id="symbolInput" placeholder="Enter symbol">
     <button id="searchButton">Search</button>
+  </div>
+
+  <div id="graph"></div>
+  <div id="array0Data" class="hidden">
+    <h3 id="currentDate"></h3>
+    <div>
+      <label>Open:</label>
+      <input type="text" id="openData" readonly>
+    </div>
+    <div>
+      <label>High:</label>
+      <input type="text" id="highData" readonly>
+    </div>
+    <div>
+      <label>Low:</label>
+      <input type="text" id="lowData" readonly>
+    </div>
+    <div>
+      <label>Current:</label>
+      <input type="text" id="closeData" readonly>
+    </div>
   </div>
 </body>
 </html>
