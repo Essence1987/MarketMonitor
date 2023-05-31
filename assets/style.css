@@ -3,7 +3,7 @@ body {
   height: 80vh;
   margin: 0;
   font-family: 'Poppins', 'Roboto', sans-serif;
-  background-color: rgb(153, 177, 255);
+  background-color: rgb(185, 201, 255);
 }
 
 .hidden {
@@ -11,11 +11,11 @@ body {
 }
 
 nav {
-  background-color: rgb(0, 0, 226) !important;
+  background-color: rgb(0, 0, 221) !important;
   
 }
 .nav-link, .navbar-brand {
-  color: rgb(35, 255, 28) !important;
+  color: rgb(9, 255, 0) !important;
 }
 
 .nav-link:hover, .navbar-brand:hover {
