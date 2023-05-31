@@ -7,44 +7,47 @@ const searchNewsEl = document.querySelector('#search_news');
 const searchInput = document.getElementById('search_input');
 const recommendNewsEl = document.getElementById('recommended_news');
 
-recommendNewsEl.style.display = 'none';
+recommendNewsEl.style.display = 'd-none';
 
 searchButtonEl.addEventListener('click', function () {
-  recentNewsFeedEl.classList.add('hidden'),
-    current_graph.classList.add('hidden'),
-    searchNewsEl.classList.remove('hidden');
-  fetchStockNewsApi();
+	recentNewsFeedEl.classList.add('d-none'),
+		current_graph.classList.add('d-none'),
+		searchNewsEl.classList.remove('d-none');
+	fetchStockNewsApi();
 });
 
 function fetchStockNewsApi() {
-  var inputValue = searchInput.textContent;
+	var inputValue = searchInput.value;
 
-  fetch(
-    'https://api.marketaux.com/v1/news/all?symbols=' +
-      inputValue +
-      '&filter_entities=true&language=en&api_token=' +
-      api_token
-  )
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
+	fetch(
+		'https://api.marketaux.com/v1/news/all?symbols=' +
+			inputValue +
+			'&filter_entities=true&language=en&api_token=' +
+			api_token
+	)
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (data) {
+			console.log(data);
 
-      for (i = 0; i < 3; i++) {
-        var articleDescription = data.data[i].description;
-        var articleImg = data.data[i].image_url;
-        var articleTitle = data.data[i].title;
+			for (i = 0; i < 3; i++) {
+				var articleDescription = data.data[i].description;
+				var articleImg = data.data[i].image_url;
+				var articleTitle = data.data[i].title;
+				var articleUrl = data.data[i].url;
 
-        console.log(articleTitle);
-        console.log(articleDescription);
-        console.log(articleImg);
+				console.log(articleTitle);
+				console.log(articleDescription);
+				console.log(articleImg);
+				console.log(articleUrl);
 
-        document.querySelector('.card-title' + (i + 1)).innerHTML =
-          articleTitle;
-        document.querySelector('.card-text' + (i + 1)).innerHTML =
-          articleDescription;
-        document.querySelector('.card-img-top' + (i + 1)).src = articleImg;
-      }
-    });
+				document.querySelector('.card-title' + (i + 1)).innerHTML =
+					articleTitle;
+				document.querySelector('.card-text' + (i + 1)).innerHTML =
+					articleDescription;
+				document.querySelector('.card-img-top' + (i + 1)).src = articleImg;
+				document.querySelector('.card-read-more' + (i + 1)).href = articleUrl;
+			}
+		});
 }
