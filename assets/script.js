@@ -1,20 +1,22 @@
 var stockNews_api_token  = 'JuJOIG1hHbpKquZiBFJtJ4OCTTKIavGBRQyzQ4bN';
 
-const searchButtonEl = document.querySelector("#search_button");
-const recentNewsFeedEl = document.querySelector("#main_recent-news");
-const current_graph = document.querySelector("#current_graph");
-const searchNewsEl = document.querySelector("#search_news");
-const searchInput = document.getElementById("search_input");
-const recommendNewsEl = document.getElementById("recommended_news");
+const searchButtonEl = document.querySelector('#search_button');
+const recentNewsFeedEl = document.querySelector('#main_recent-news');
+const current_graph = document.querySelector('#current_graph');
+const searchNewsEl = document.querySelector('#search_news');
+const searchInput = document.getElementById('search_input');
+const recommendNewsEl = document.getElementById('recommended_news');
+// const currentGraphEl = document.getElementById('current_graph');
 const divCard = document.querySelector(".col");
 
-recommendNewsEl.style.display = "none";
+recommendNewsEl.style.display = 'd-none';
 
-searchButtonEl.addEventListener("click", function () {
-    recentNewsFeedEl.classList.add("hidden"),
-    current_graph.classList.add("hidden"),
-    searchNewsEl.classList.remove("hidden");
-    fetchStockNewsApi()
+searchButtonEl.addEventListener('click', function () {
+	recentNewsFeedEl.classList.add('d-none'),
+		current_graph.classList.add('d-none'),
+		searchNewsEl.classList.remove('d-none');
+	document.getElementById('array0Data').classList.remove('d-none');
+	fetchStockNewsApi();
 });
 
 function fetchStockNewsApi(){
