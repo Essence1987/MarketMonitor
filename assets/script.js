@@ -12,7 +12,6 @@ recommendNewsEl.style.display = 'd-none';
 
 searchButtonEl.addEventListener('click', function () {
 	recentNewsFeedEl.classList.add('d-none'),
-		current_graph.classList.add('d-none'),
 		searchNewsEl.classList.remove('d-none');
 	document.getElementById('array0Data').classList.remove('d-none');
 	fetchStockNewsApi();
