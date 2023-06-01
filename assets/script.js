@@ -6,7 +6,6 @@ const current_graph = document.querySelector('#current_graph');
 const searchNewsEl = document.querySelector('#search_news');
 const searchInput = document.getElementById('search_input');
 const recommendNewsEl = document.getElementById('recommended_news');
-// const currentGraphEl = document.getElementById('current_graph');
 const divCard = document.querySelector('.col');
 
 recommendNewsEl.style.display = 'd-none';
@@ -54,12 +53,12 @@ function fetchStockNewsApi() {
 		});
 }
 
-function fetchSimilarStockNewsApi() {
-	fetch(
-		'https://api.marketaux.com/v1/news/similar/' +
-			uuid +
-			'?api_token=' +
-			stockNews_api_token +
-			'&language=en'
-	);
-}
+// function fetchSimilarStockNewsApi() {
+// 	fetch(
+// 		'https://api.marketaux.com/v1/news/similar/' +
+// 			uuid +
+// 			'?api_token=' +
+// 			stockNews_api_token +
+// 			'&language=en'
+// 	);
+// }
