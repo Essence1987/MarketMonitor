@@ -16,6 +16,9 @@ function fetchData() {
 	const apiUrl = `https://api.twelvedata.com/time_series?symbol=${symbols}&interval=${interval}&apikey=${apiKey}`;
 	console.log(apiUrl);
 
+  // APILogoURL
+  const apiLogoUrl = `https://api.twelvedata.com/logo?symbol=${symbols}&apikey=${apiKey}`;
+
 	// The API Request
 	fetch(apiUrl)
 		.then((response) => response.json())
@@ -28,6 +31,21 @@ function fetchData() {
 			// Displays any errors that occur during the API request in the console
 			console.error('Error:', error);
 		});
+
+    // APILogoURL Request
+    fetch(apiLogoUrl)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+
+    const logoUrl = data.url;
+    const logoImage = document.getElementById('logoImage');
+    logoImage.src = logoUrl;
+    logoImage.alt = "Company Logo";
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 }
 
 function plotGraphAndDisplayData(data) {
