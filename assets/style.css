@@ -1,0 +1,10 @@
+html,
+body {
+  height: 80vh;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
