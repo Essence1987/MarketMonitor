@@ -27,7 +27,6 @@ function fetchStockNewsApi() {
 	// Define variable for input in the search bar
 	var inputValue = searchInput.value;
 	// Fetch API
-	var inputValue = searchInput.value;
 
 	fetch(
 		'https://api.marketaux.com/v1/news/all?symbols=' +
