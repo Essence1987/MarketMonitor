@@ -21,7 +21,7 @@ searchButtonEl.addEventListener('click', function () {
 
 function fetchStockNewsApi(){
 
-var inputValue = searchInput.textContent;
+var inputValue = searchInput.value;
 
 fetch("https://api.marketaux.com/v1/news/all?symbols=" + inputValue + "&filter_entities=true&limit=3&language=en&api_token=" + stockNews_api_token)
     .then (function (response){
@@ -53,6 +53,4 @@ fetch("https://api.marketaux.com/v1/news/all?symbols=" + inputValue + "&filter_e
 
 
 
-function fetchSimilarStockNewsApi(){
-    fetch("https://api.marketaux.com/v1/news/similar/" + uuid + "?api_token=" + stockNews_api_token + "&language=en")
-}
+//function fetchSimilarStockNewsApi(){fetch("https://api.marketaux.com/v1/news/similar/" + uuid + "?api_token=" + stockNews_api_token + "&language=en")}
