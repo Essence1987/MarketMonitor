@@ -8,7 +8,7 @@ const searchInput = document.getElementById('search_input');
 const recommendNewsEl = document.getElementById('recommended_news');
 const divCard = document.querySelector('.col');
 
-recommendNewsEl.style.display = 'd-none';
+//recommendNewsEl.style.display = 'd-none';
 
 searchButtonEl.addEventListener('click', function () {
 	recentNewsFeedEl.classList.add('d-none'),
@@ -60,6 +60,3 @@ fetch("https://api.marketaux.com/v1/news/all?symbols=" + inputValue + "&filter_e
 // 	);
 // }
 
-function fetchSimilarStockNewsApi(){
-    fetch("https://api.marketaux.com/v1/news/similar/" + uuid + "?api_token=" + stockNews_api_token + "&language=en")
-}
