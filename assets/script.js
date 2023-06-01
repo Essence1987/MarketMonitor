@@ -20,23 +20,20 @@ searchButtonEl.addEventListener('click', function () {
 function fetchStockNewsApi() {
 	var inputValue = searchInput.value;
 
-	fetch(
-		'https://api.marketaux.com/v1/news/all?symbols=' +
-			inputValue +
-			'&filter_entities=true&limit=3&language=en&api_token=' +
-			stockNews_api_token
-	)
-		.then(function (response) {
-			return response.json();
-		})
-		.then(function (data) {
-			console.log(data);
+var inputValue = searchInput.value;
 
-			for (i = 0; i < 3; i++) {
-				var articleDescription = data.data[i].description;
-				var articleImg = data.data[i].image_url;
-				var articleTitle = data.data[i].title;
-				var articleUrl = data.data[i].url;
+fetch("https://api.marketaux.com/v1/news/all?symbols=" + inputValue + "&filter_entities=true&limit=3&language=en&api_token=" + stockNews_api_token)
+    .then (function (response){
+        return response.json();
+    })
+    .then (function(data){
+        console.log(data);
+        
+        for(i=0;i<3;i++){
+        var articleDescription = data.data[i].description;
+        var articleImg = data.data[i].image_url;
+        var articleTitle = data.data[i].title;
+        var articleUrl = data.data[i].url;
 
 				console.log(articleTitle);
 				console.log(articleDescription);
@@ -62,3 +59,7 @@ function fetchStockNewsApi() {
 // 			'&language=en'
 // 	);
 // }
+
+function fetchSimilarStockNewsApi(){
+    fetch("https://api.marketaux.com/v1/news/similar/" + uuid + "?api_token=" + stockNews_api_token + "&language=en")
+}
