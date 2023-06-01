@@ -6,6 +6,7 @@ const current_graph = document.querySelector('#current_graph');
 const searchNewsEl = document.querySelector('#search_news');
 const searchInput = document.getElementById('search_input');
 const recommendNewsEl = document.getElementById('recommended_news');
+// const currentGraphEl = document.getElementById('current_graph');
 
 recommendNewsEl.style.display = 'd-none';
 
@@ -13,6 +14,7 @@ searchButtonEl.addEventListener('click', function () {
 	recentNewsFeedEl.classList.add('d-none'),
 		current_graph.classList.add('d-none'),
 		searchNewsEl.classList.remove('d-none');
+	// currentGraphEl.classList.remove('d-none');
 	fetchStockNewsApi();
 });
 
