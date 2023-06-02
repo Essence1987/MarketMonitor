@@ -38,3 +38,16 @@ h1 {
 .fa-space-awesome {
   font-size: 2rem;
 }
+
+#logoImage{
+  margin-left: 40%;
+  margin-bottom: 15px;
+  border-radius: 1.5rem;
+}
+
+.card{
+  margin-top: 80px;
+  background-color: beige;
+  margin-bottom: 20px;
+  
+}

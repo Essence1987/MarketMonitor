@@ -42,6 +42,7 @@ function fetchData() {
     const logoImage = document.getElementById('logoImage');
     logoImage.src = logoUrl;
     logoImage.alt = "Company Logo";
+	
   })
   .catch((error) => {
     console.error('Error:', error);
