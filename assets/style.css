@@ -4,6 +4,7 @@ body {
 	margin: 0;
 	font-family: 'Poppins', 'Roboto', sans-serif;
 	background-color: rgb(185, 201, 255);
+  
 }
 
 .hidden {
@@ -69,5 +70,33 @@ a {
   margin-top: 80px;
   background-color: beige;
   margin-bottom: 20px;
+
+}
+
+.intro{
+  margin-top: 100px;
+  text-align: center;
+  margin-left: 10px;
   
+}
+
+.about_img{
+  height: 190px;
+  width: 190px;
+}
+
+.about-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.about-container .col{
+  font-size: 16px;
+}
+
+.intro2{
+  font-style: italic;
+  font-size: smaller;
 }
