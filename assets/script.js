@@ -56,15 +56,3 @@ function fetchStockNewsApi() {
 			}
 		});
 }
-
-// recommendNewsEl.style.display = 'd-none';
-// function fetchSimilarStockNewsApi() {
-// 	fetch(
-// 		'https://api.marketaux.com/v1/news/similar/' +
-// 			uuid +
-// 			'?api_token=' +
-// 			stockNews_api_token +
-// 			'&language=en'
-// 	);
-// }
-
