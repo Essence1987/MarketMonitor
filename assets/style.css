@@ -1,40 +1,43 @@
 html,
 body {
-  height: 80vh;
-  margin: 0;
-  font-family: 'Poppins', 'Roboto', sans-serif;
-  background-color: rgb(185, 201, 255);
+	height: 80vh;
+	margin: 0;
+	font-family: 'Poppins', 'Roboto', sans-serif;
+	background-color: rgb(185, 201, 255);
 }
 
 .hidden {
-  display: none;
+	display: none;
 }
 
 nav {
-  background-color: rgb(0, 0, 221) !important;
-  
+	background-color: rgb(0, 0, 221) !important;
 }
-.nav-link, .navbar-brand {
-  color: rgb(9, 255, 0) !important;
+.nav-link,
+.navbar-brand {
+	color: rgb(9, 255, 0) !important;
 }
 .navbar-toggler-icon {
-  background-color: rgb(9, 255, 0) !important;
+	background-color: rgb(9, 255, 0) !important;
 }
 
-.nav-link:hover, .navbar-brand:hover {
-  transform: scale(1.05) !important;
+.nav-link:hover,
+.navbar-brand:hover {
+	transform: scale(1.05) !important;
 }
 h1 {
-  padding-top: 4rem;
-  font-size: 7rem;
-  font-weight: 400;
-  font-style: italic;
- 
+	padding-top: 4rem;
+	font-size: 7rem;
+	font-weight: 400;
+	font-style: italic;
 }
 .srchBtn {
-  background-color: rgb(9, 255, 0);
-  
+	background-color: rgb(9, 255, 0);
 }
 .fa-space-awesome {
-  font-size: 2rem;
+	font-size: 2rem;
+}
+
+a {
+	text-decoration: none;
 }
