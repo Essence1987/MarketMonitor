@@ -17,7 +17,7 @@ Current Stock Graph: Visualize the stock's performance with an graph. The graph 
    bash
    git clone https://github.com/Essence1987/MarketMonitor.git
 
-2. Open your web browser and navigate to http://localhost:3000 to access the Market Monitor.
+2. Open your web browser and navigate to https://essence1987.github.io/MarketMonitor/ to access the Market Monitor.
 
 # Usage
 
