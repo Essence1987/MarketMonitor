@@ -9,6 +9,7 @@ const searchNewsEl = document.querySelector('#search_news');
 const searchInput = document.getElementById('search_input');
 const recommendNewsEl = document.getElementById('recommended_news');
 const divCard = document.querySelector('.col');
+const historyContainer = document.getElementById('historyContainer');
 
 // Event listener for the search bar
 searchButtonEl.addEventListener('click', function () {
@@ -19,7 +20,7 @@ searchButtonEl.addEventListener('click', function () {
 	// Shows the searched array data
 	document.getElementById('array0Data').classList.remove('d-none');
 	// Runs the fetchStockNewsAPI function
-	fetchStockNewsApi();
+	// fetchStockNewsApi();
 });
 
 // fetchStockNewsAPI function setup
@@ -56,3 +57,18 @@ function fetchStockNewsApi() {
 			}
 		});
 }
+
+let searchHistory = JSON.parse(localStorage.getItem('search')) || [];
+
+searchButtonEl.addEventListener('click', function () {
+	const searchTerm = searchInput.value;
+	fetchStockNewsApi(searchTerm);
+	searchHistory.push(searchTerm);
+	localStorage.setItem('search', JSON.stringify(searchHistory));
+	if (searchTerm.trim() !== '') {
+		// Display the search term in the history container
+		const listItem = document.createElement('li');
+		listItem.textContent = searchTerm;
+		historyContainer.appendChild(listItem);
+	}
+});

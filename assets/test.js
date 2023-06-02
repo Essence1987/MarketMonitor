@@ -15,11 +15,11 @@ function fetchData() {
 	// API URL
 	const apiUrl = `https://api.twelvedata.com/time_series?symbol=${symbols}&interval=${interval}&apikey=${apiKey}`;
 
-  // APILogoURL
-  const apiLogoUrl = `https://api.twelvedata.com/logo?symbol=${symbols}&apikey=${apiKey}`;
+	// APILogoURL
+	const apiLogoUrl = `https://api.twelvedata.com/logo?symbol=${symbols}&apikey=${apiKey}`;
 
-//   API Crypto URL
-  const apiCryptoUrl = `https://api.twelvedata.com/cryptocurrencies?symbol=${symbols}&apikey=${apiKey}`;
+	//   API Crypto URL
+	const apiCryptoUrl = `https://api.twelvedata.com/cryptocurrencies?symbol=${symbols}&apikey=${apiKey}`;
 
 	// The API Request
 	fetch(apiUrl)
@@ -31,7 +31,7 @@ function fetchData() {
 				// Symbol not found, call cryptocurrency function
 				fetchCryptocurrencies();
 			} else {
-			plotGraphAndDisplayData(data);
+				plotGraphAndDisplayData(data);
 			}
 		})
 		.catch((error) => {
@@ -39,21 +39,20 @@ function fetchData() {
 			console.error('Error:', error);
 		});
 
-    // APILogoURL Request
-    fetch(apiLogoUrl)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
+	// APILogoURL Request
+	fetch(apiLogoUrl)
+		.then((response) => response.json())
+		.then((data) => {
+			console.log(data);
 
-    const logoUrl = data.url;
-    const logoImage = document.getElementById('logoImage');
-    logoImage.src = logoUrl;
-    logoImage.alt = "Company Logo";
-	
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
+			const logoUrl = data.url;
+			const logoImage = document.getElementById('logoImage');
+			logoImage.src = logoUrl;
+			logoImage.alt = 'Company Logo';
+		})
+		.catch((error) => {
+			console.error('Error:', error);
+		});
 }
 
 function fetchCryptocurrencies() {
@@ -66,8 +65,8 @@ function fetchCryptocurrencies() {
 		.catch((error) => {
 			console.error('Error:', error);
 		});
-	}
-	
+}
+
 function plotGraphAndDisplayData(data) {
 	plotGraph(data);
 	displayArray0Data(data);
