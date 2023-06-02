@@ -14,10 +14,12 @@ function fetchData() {
 
 	// API URL
 	const apiUrl = `https://api.twelvedata.com/time_series?symbol=${symbols}&interval=${interval}&apikey=${apiKey}`;
-	console.log(apiUrl);
 
   // APILogoURL
   const apiLogoUrl = `https://api.twelvedata.com/logo?symbol=${symbols}&apikey=${apiKey}`;
+
+//   API Crypto URL
+  const apiCryptoUrl = `https://api.twelvedata.com/cryptocurrencies?symbol=${symbols}&apikey=${apiKey}`;
 
 	// The API Request
 	fetch(apiUrl)
@@ -25,7 +27,12 @@ function fetchData() {
 		.then((data) => {
 			// Displays the retrieved data in console
 			console.log(data);
+			if (data.error && data.error.code === 400) {
+				// Symbol not found, call cryptocurrency function
+				fetchCryptocurrencies();
+			} else {
 			plotGraphAndDisplayData(data);
+			}
 		})
 		.catch((error) => {
 			// Displays any errors that occur during the API request in the console
@@ -42,12 +49,25 @@ function fetchData() {
     const logoImage = document.getElementById('logoImage');
     logoImage.src = logoUrl;
     logoImage.alt = "Company Logo";
+	
   })
   .catch((error) => {
     console.error('Error:', error);
   });
 }
 
+function fetchCryptocurrencies() {
+	fetch('https://api.twelvedata.com/cryptocurrencies')
+		.then((response) => response.json())
+		.then((data) => {
+			// Process cryptocurrency data here
+			console.log(data);
+		})
+		.catch((error) => {
+			console.error('Error:', error);
+		});
+	}
+	
 function plotGraphAndDisplayData(data) {
 	plotGraph(data);
 	displayArray0Data(data);
@@ -89,6 +109,7 @@ function displayArray0Data(data) {
 	const currentDate = new Date().toLocaleDateString('en-US', {
 		day: 'numeric',
 		month: 'long',
+		year: 'numeric',
 	});
 
 	currentDateElement.textContent = currentDate;
