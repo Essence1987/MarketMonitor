@@ -13,17 +13,34 @@ body {
 nav {
 	background-color: rgb(0, 0, 221) !important;
 }
-.nav-link,
-.navbar-brand {
-	color: rgb(9, 255, 0) !important;
+.nav-link, .navbar-brand {
+  color: hsl(118, 70%, 50%) !important;
+  position: relative;
 }
 .navbar-toggler-icon {
-	background-color: rgb(9, 255, 0) !important;
+  background-color: hsl(118, 70%, 50%) !important;
 }
-
-.nav-link:hover,
+.nav-link::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background: hsl(118, 100%, 50%);
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  transition: 0.3s;
+}
+.nav-link:hover::after{
+  width: 100%;
+  color: hsl(118, 100%, 50%) !important;
+}
+.nav-link:hover{
+  color: hsl(118, 100%, 50%) !important;
+}
 .navbar-brand:hover {
-	transform: scale(1.05) !important;
+  transform: scale(1.05);
+  color: hsl(118, 100%, 50%) !important;
+  transform: rotate(15deg);
 }
 h1 {
 	padding-top: 4rem;
