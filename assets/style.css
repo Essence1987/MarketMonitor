@@ -11,7 +11,7 @@ body {
 	display: none;
 }
 
-nav {
+nav, footer {
 	background-color: rgb(0, 0, 221) !important;
 }
 .nav-link, .navbar-brand {
@@ -52,8 +52,19 @@ h1 {
 .srchBtn {
 	background-color: rgb(9, 255, 0);
 }
-.fa-space-awesome {
+i {
 	font-size: 2rem;
+}
+.icons {
+  color: hsl(118, 70%, 50%);
+}
+.icons:hover {
+  color: hsl(118, 100%, 50%);
+  transform: translateY(-5px);
+  transition: 0.5s;
+}
+footer {
+  margin-top: 50px;
 }
 
 a {
