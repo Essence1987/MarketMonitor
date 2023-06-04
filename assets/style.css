@@ -132,15 +132,15 @@ a {
   
 }
 
-.about_img{
-  height: 190px;
-  width: 190px;
+.about_img4{
+  margin-top: 48px;
 }
 
 .about-container{
   display: flex;
   justify-content: center;
   align-items: center;
+
 
 }
 
