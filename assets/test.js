@@ -44,11 +44,19 @@ function fetchData() {
 		.then((response) => response.json())
 		.then((data) => {
 			console.log(data);
-
-			const logoUrl = data.url;
 			const logoImage = document.getElementById('logoImage');
-			logoImage.src = logoUrl;
-			logoImage.alt = 'Company Logo';
+
+			if (data.url === undefined) {
+				// Symbol not found, call crypto logo URL
+				const logoUrl = data.logo_base;
+				console.log(logoUrl);
+				logoImage.src = logoUrl;
+				logoImage.alt = 'Crypto Logo';
+			} else {
+				const logoUrl = data.url;
+				logoImage.src = logoUrl;
+				logoImage.alt = 'Company Logo';
+			}
 		})
 		.catch((error) => {
 			console.error('Error:', error);

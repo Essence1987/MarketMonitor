@@ -14,20 +14,18 @@ const historyContainer = document.getElementById('historyContainer');
 // Event listener for the search bar
 searchButtonEl.addEventListener('click', function () {
 	// Hides the recent news feed
-	recentNewsFeedEl.classList.add('d-none'),
-		// Shows the searched news feed
-		searchNewsEl.classList.remove('d-none');
+	recentNewsFeedEl.classList.add('d-none');
+	// Shows the searched news feed
+	searchNewsEl.classList.remove('d-none');
 	// Shows the searched array data
 	document.getElementById('array0Data').classList.remove('d-none');
 	// Runs the fetchStockNewsAPI function
-	// fetchStockNewsApi();
+	fetchStockNewsApi();
 });
 
 // fetchStockNewsAPI function setup
 function fetchStockNewsApi() {
-	// Define variable for input in the search bar
 	var inputValue = searchInput.value;
-	// Fetch API
 
 	fetch(
 		'https://api.marketaux.com/v1/news/all?symbols=' +
@@ -36,18 +34,19 @@ function fetchStockNewsApi() {
 			stockNews_api_token
 	)
 		.then(function (response) {
+			if (!response.ok) {
+				throw new Error('Error ' + response.status);
+			}
 			return response.json();
 		})
 		.then(function (data) {
 			console.log(data);
-			// For loop for the three article card for the searched symbol news
 			for (i = 0; i < 3; i++) {
-				// Define variable for the data received from the API
 				var articleDescription = data.data[i].description;
 				var articleImg = data.data[i].image_url;
 				var articleTitle = data.data[i].title;
 				var articleUrl = data.data[i].url;
-				// Enters data received from the API to according placement
+
 				document.querySelector('.card-title' + (i + 1)).innerHTML =
 					articleTitle;
 				document.querySelector('.card-text' + (i + 1)).innerHTML =
@@ -55,6 +54,11 @@ function fetchStockNewsApi() {
 				document.querySelector('.card-img-top' + (i + 1)).src = articleImg;
 				document.querySelector('.card-url' + (i + 1)).href = articleUrl;
 			}
+		})
+		.catch(function (error) {
+			console.log('API error:', error);
+			recentNewsFeedEl.classList.remove('d-none');
+			searchNewsEl.classList.add('d-none');
 		});
 }
 
