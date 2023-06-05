@@ -53,6 +53,10 @@ APIs:
 
 # Demo
 
+The following animation demonstrates the application functionality:
+
+![A user enters a Stock or Crypto Symbol and the site updates the news cards and graph with the latest available data.](./assets/images/sitedemo.gif)
+
 # License
 
 Market Monitor is released under the MIT License. Feel free to modify and use the code for your own purposes.
