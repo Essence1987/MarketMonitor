@@ -7,7 +7,6 @@ const recentNewsFeedEl = document.querySelector('#main_recent-news');
 const current_graph = document.querySelector('#current_graph');
 const searchNewsEl = document.querySelector('#search_news');
 const searchInput = document.getElementById('search_input');
-const recommendNewsEl = document.getElementById('recommended_news');
 const divCard = document.querySelector('.col');
 const historyEl = document.getElementById('history');
 const clearHistoryEl = document.getElementById('history-button');
