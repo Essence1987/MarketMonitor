@@ -44,6 +44,10 @@ APIs:
 - Twelvedata (Stock market data)
 - Marketaux (News articles)
 
+WIDGETS:
+
+-CryptoPanic (Crypto News)
+
 # Credits
 
 - https://github.com/Essence1987
