@@ -38,7 +38,7 @@ function init() {
 			historyItem.setAttribute('type', 'text');
 			historyItem.setAttribute('readonly', true);
 			historyItem.setAttribute('class', 'form-control d-block bg-white');
-			historyItem.setAttribute('style', 'cursor: pointer;');
+			historyItem.setAttribute('style', 'pointer-events: none;');
 			historyItem.setAttribute('value', searchHistory[i]);
 			historyItem.addEventListener('click', function () {
 				fetchStockNewsApi(historyItem.value);
