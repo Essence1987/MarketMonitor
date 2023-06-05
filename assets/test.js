@@ -103,6 +103,11 @@ function plotGraph(data) {
 	};
 
 	Plotly.newPlot('graph', graphData, layout);
+
+	// Event listener so graph will resize based off window size
+	window.addEventListener('resize', function() {
+		Plotly.Plots.resize('graph');
+	})
 }
 
 // Function to display data for Array 0
