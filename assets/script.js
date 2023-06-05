@@ -16,6 +16,7 @@ let searchHistory = JSON.parse(localStorage.getItem('search')) || [];
 
 function init() {
 	// Get history from local storage if any
+	renderSearchHistory();
 	searchButtonEl.addEventListener('click', function () {
 		const searchTerm = searchInput.value;
 		searchHistory.push(searchTerm);
